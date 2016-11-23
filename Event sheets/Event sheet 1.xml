@@ -1,0 +1,790 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="vidaEnemigo" sid="375367117683618" static="0" type="number">0</variable>
+        <variable constant="0" name="prueba" sid="488836194251799" static="0" type="text"></variable>
+        <variable constant="0" name="enemyID" sid="879841552858004" static="0" type="number">0</variable>
+        <variable constant="0" name="IDcollision" sid="295066101715402" static="0" type="number">0</variable>
+        <variable constant="0" name="fullScreen" sid="994878897858839" static="0" type="number">0</variable>
+        <event-block sid="399337464216904">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="775430065759005" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="595313105083763" type="EnemiesTorso" />
+                <action id="-9" name="Destroy" sid="687269007309605" type="Heroes" />
+                <action id="0" name="Set text" sid="856336143715924" type="health">
+                    <param id="0" name="Text">&quot;&quot;&amp;barrera.health</param>
+                </action>
+                <action id="0" name="Call function" sid="747967652173241" type="Function">
+                    <param id="0" name="Name">&quot;startHeroe&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;demonHunter&quot;{###}&quot;revolver&quot;</param>
+                </action>
+                <action behavior="Rotate" id="1" name="Set acceleration" sid="614815369263204" type="revolverPrueba">
+                    <param id="0" name="Acceleration">0</param>
+                </action>
+                <action behavior="Rotate" id="0" name="Set speed" sid="202443060819629" type="revolverPrueba">
+                    <param id="0" name="Speed">0</param>
+                </action>
+                <action id="0" name="Call function" sid="639009173133014" type="Function">
+                    <param id="0" name="Name">&quot;reload&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="246060038302673">
+            <conditions>
+                <condition id="0" name="On function" sid="155118868275355" type="Function">
+                    <param id="0" name="Name">&quot;startHeroe&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="996050152379137" type="System">
+                    <param id="0" name="Object to create">demonHunter</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">800</param>
+                    <param id="3" name="Y">150</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="733463084675529">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="106259201576576" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;demonHunter&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="122107705420739" type="demonHunter">
+                            <param id="0" name="Instance variable">ready</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="866977514993782" type="demonHunter">
+                            <param id="0" name="Instance variable">arma</param>
+                            <param id="1" name="Value">Function.Param(1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="856060411546472">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="480135823561478" type="Function">
+                            <param id="0" name="Index">1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;revolver&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="574508076011150" type="Heroes">
+                            <param id="0" name="Instance variable">bullets</param>
+                            <param id="1" name="Value">6</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="619184411129063" type="Heroes">
+                            <param id="0" name="Instance variable">reload</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="877211710574671" type="Heroes">
+                            <param id="0" name="Instance variable">damage</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="795432811257161" type="Heroes">
+                            <param id="0" name="Instance variable">reloadTime</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="561367626599355" type="Heroes">
+                            <param id="0" name="Instance variable">bulletVelocidad</param>
+                            <param id="1" name="Value">1800</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="369602166891457" type="Heroes">
+                            <param id="0" name="Instance variable">headShootDamage</param>
+                            <param id="1" name="Value">20</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="217305681372001" type="Heroes">
+                            <param id="0" name="Instance variable">cooldown</param>
+                            <param id="1" name="Value">0.3</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="557408249188231" type="Heroes">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Value">&quot;demonHunter&quot;</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="917705932627942" type="Heroes">
+                            <param id="0" name="Instance variable">ready</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="311530524278813" type="demonHunter">
+                            <param id="0" name="Instance variable">ready</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="671552423871485" type="demonHunter">
+                            <param id="0" name="Instance variable">arma</param>
+                            <param id="1" name="Value">Function.Param(1)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="940288729230215" type="demonHunter">
+                            <param id="0" name="Instance variable">bullets</param>
+                            <param id="1" name="Value">6</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="477374557716033" type="demonHunter">
+                            <param id="0" name="Instance variable">reload</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="846425579198577" type="demonHunter">
+                            <param id="0" name="Instance variable">damage</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="604766758412907" type="demonHunter">
+                            <param id="0" name="Instance variable">reloadTime</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="358755186314145" type="demonHunter">
+                            <param id="0" name="Instance variable">bulletVelocidad</param>
+                            <param id="1" name="Value">1800</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="338307370974563" type="demonHunter">
+                            <param id="0" name="Instance variable">headShootDamage</param>
+                            <param id="1" name="Value">20</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="959360900862217" type="demonHunter">
+                            <param id="0" name="Instance variable">cooldown</param>
+                            <param id="1" name="Value">0.3</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="407403923392104" type="demonHunter">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Value">&quot;demonHunter&quot;</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="390742009801152" type="demonHunter">
+                            <param id="0" name="Instance variable">ready</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="198219067561421" type="console">
+                            <param id="0" name="Text">&quot;prueba&quot;&amp;demonHunter.ready</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="477322653378782">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="265384311469182">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="291819714542697" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="998390468926795" type="TextBox">
+                    <param id="0" name="Text">&quot;FPS: &quot;&amp;fps</param>
+                </action>
+                <action id="-17" name="Move forward" sid="513894076578646" type="EnemiesTorso">
+                    <param id="0" name="Distance">EnemiesTorso.speed</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="161521118322223" title="ENEMIES">
+            <sub-events>
+                <event-block disabled="1" sid="378946495951444">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="989824769133832" type="System">
+                            <param id="0" name="Interval (seconds)">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="670888019649172" type="Function">
+                            <param id="0" name="Name">&quot;spawn&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;test&quot;{###}enemyID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="628392753424055">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="857534512681676" type="System">
+                            <param id="0" name="Interval (seconds)">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="269090477737445" type="Function">
+                            <param id="0" name="Name">&quot;spawn&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;test2&quot;{###}enemyID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="346785924492637">
+                    <conditions>
+                        <condition id="0" name="On function" sid="168727937289093" type="Function">
+                            <param id="0" name="Name">&quot;spawn&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="842176122335013">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="519285752754867" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;test&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="778826477216833" type="Sprite">
+                                    <param id="0" name="Object">test</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">round(random(1,3))</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="551488628613901" type="test">
+                                    <param id="0" name="Instance variable">life</param>
+                                    <param id="1" name="Value">20</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="911862305961659" type="test">
+                                    <param id="0" name="Instance variable">speed</param>
+                                    <param id="1" name="Value">1.5</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="627965016283387" type="test">
+                                    <param id="0" name="Instance variable">knockBack</param>
+                                    <param id="1" name="Value">25</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="444861991532538" type="test">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Value">enemyID</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="848777662340005" type="System">
+                                    <param id="0" name="Variable">enemyID</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="449978213378828" type="test">
+                                    <param id="0" name="Instance variable">damage</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="740591342758256" type="test">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Value">&quot;test&quot;</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="676366266690046" type="testHead">
+                                    <param id="0" name="Object">test</param>
+                                    <param id="1" name="Image point (optional)">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="627025551098997" type="testHead">
+                                    <param id="0" name="Pin to">test</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                                <action disabled="1" id="0" name="Set text" sid="127610074181918" type="console">
+                                    <param id="0" name="Text">console.Text&amp;EnemiesTorso.life</param>
+                                </action>
+                                <action id="0" name="Set text" sid="819264210477583" type="number">
+                                    <param id="0" name="Text">&quot;&quot;&amp;Enemies.Count</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="170697695270871" type="testHead">
+                                    <param id="0" name="Instance variable">headID</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="201068325310364" type="console">
+                                    <param id="0" name="Text">console.Text&amp;&quot;  ID CREADA&quot;&amp;test.ID</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="577340741456193">
+                                    <conditions />
+                                    <actions />
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="891556119357458">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="485162473835615" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;test2&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="333162438211915" type="Sprite">
+                                    <param id="0" name="Object">test2</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">round(random(1,3))</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="593520185905185" type="test2">
+                                    <param id="0" name="Instance variable">life</param>
+                                    <param id="1" name="Value">80</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="324231361795847" type="test2">
+                                    <param id="0" name="Instance variable">speed</param>
+                                    <param id="1" name="Value">0.5</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="577580546283319" type="test2">
+                                    <param id="0" name="Instance variable">knockBack</param>
+                                    <param id="1" name="Value">50</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="668200486363260" type="test2">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Value">enemyID</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="807750799973412" type="System">
+                                    <param id="0" name="Variable">enemyID</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="707321854940793" type="test2">
+                                    <param id="0" name="Instance variable">damage</param>
+                                    <param id="1" name="Value">6</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="105825797337296" type="test2">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Value">&quot;test2&quot;</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="300477695269037" type="test2Head">
+                                    <param id="0" name="Object">test2</param>
+                                    <param id="1" name="Image point (optional)">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="989202866274250" type="test2Head">
+                                    <param id="0" name="Pin to">test2</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                                <action disabled="1" id="0" name="Set text" sid="505009614851844" type="console">
+                                    <param id="0" name="Text">console.Text&amp;EnemiesTorso.life</param>
+                                </action>
+                                <action id="0" name="Set text" sid="776142888398363" type="number">
+                                    <param id="0" name="Text">&quot;&quot;&amp;Enemies.Count</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="599200978950497" type="test2Head">
+                                    <param id="0" name="Instance variable">headID</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="984177767601570" type="vida">
+                                    <param id="0" name="Text">&quot;&quot;&amp;test2.life</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="529751684232545" type="vida">
+                                    <param id="0" name="Object">test2</param>
+                                    <param id="1" name="Image point (optional)">2</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="502237847955191" type="vida">
+                                    <param id="0" name="Pin to">test2</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="532266963532906" type="console">
+                                    <param id="0" name="Text">console.Text&amp;&quot;  ID CREADA&quot;&amp;test2.ID</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="272283605123799">
+                                    <conditions />
+                                    <actions />
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="365955492249446" title="SHOOT">
+            <sub-events>
+                <event-block sid="542009848131570">
+                    <conditions>
+                        <condition id="14" name="On tap" sid="756688492319242" type="Touch" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="748065821433471" type="demonHunter">
+                            <param id="0" name="Instance variable">ready</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="229999138251735" type="revolverPrueba">
+                            <param id="0" name="Instance variable">carga</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="4" inverted="1" name="Is touching object" sid="164512911359561" type="Touch">
+                            <param id="0" name="Object">revolverPrueba</param>
+                        </condition>
+                        <condition id="4" inverted="1" name="Is touching object" sid="306474997645253" type="Touch">
+                            <param id="0" name="Object">buttons</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="407925762597840" type="Function">
+                            <param id="0" name="Name">&quot;shoot&quot;</param>
+                            <param id="1" name="Parameter {n}">Touch.X{###}Touch.Y{###}heroes.cooldown{###}heroes.type{###}heroes.bulletVelocidad</param>
+                        </action>
+                        <action disabled="1" id="0" name="Set text" sid="424871758593308" type="console">
+                            <param id="0" name="Text">console.Text&amp;&quot;Tocado&quot;&amp;Touch.X&amp;&quot; &quot;&amp;Touch.Y</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="313488566756905" type="revolverPrueba">
+                            <param id="0" name="Instance variable">ready</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="757778247956483">
+                    <conditions>
+                        <condition id="0" name="On function" sid="493958527974369" type="Function">
+                            <param id="0" name="Name">&quot;shoot&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="395228706053010">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="384621493403540" type="Function">
+                                    <param id="0" name="Index">3</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;demonHunter&quot;</param>
+                                </condition>
+                                <condition id="-13" name="Pick nth instance" sid="911770958122027" type="System">
+                                    <param id="0" name="Object">bulletIcon</param>
+                                    <param id="1" name="Instance">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Rotate" id="0" name="Set speed" sid="760309075531597" type="revolverPrueba">
+                                    <param id="0" name="Speed">300</param>
+                                </action>
+                                <action behavior="Rotate" id="1" name="Set acceleration" sid="466976876751916" type="revolverPrueba">
+                                    <param id="0" name="Acceleration">800</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="701260649195504" type="revolverPrueba">
+                                    <param id="0" name="Instance variable">carga</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="337305529287771" type="bulletIcon" />
+                                <action id="-13" name="Set boolean" sid="999770445213482" type="demonHunter">
+                                    <param id="0" name="Instance variable">ready</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="691360999855966" type="demonHunter">
+                                    <param id="0" name="Object">bullet</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="-18" name="Rotate clockwise" sid="722502193252681" type="bullet">
+                                    <param id="0" name="Degrees">Function.Param(4)</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="699068228344409" type="bullet">
+                                    <param id="0" name="X">Function.Param(0)</param>
+                                    <param id="1" name="Y">Function.Param(1)</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="251263851107471" type="demonHunter">
+                                    <param id="0" name="X">Function.Param(0)</param>
+                                    <param id="1" name="Y">Function.Param(1)</param>
+                                </action>
+                                <action disabled="1" id="0" name="Set text" sid="699828695036137" type="console">
+                                    <param id="0" name="Text">console.Text&amp;&quot;carga= &quot;&amp;revolverPrueba.carga</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="445452641912346" type="System">
+                                    <param id="0" name="Seconds">Function.Param(2)</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="636229019119173" type="demonHunter">
+                                    <param id="0" name="Instance variable">ready</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Rotate" id="0" name="Set speed" sid="939973129378753" type="revolverPrueba">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action behavior="Rotate" id="1" name="Set acceleration" sid="243424757701354" type="revolverPrueba">
+                                    <param id="0" name="Acceleration">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="363719453418597">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="656225408438997" type="Bullets">
+                    <param id="0" name="Object">Enemies</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="422842980336945" type="System">
+                    <param id="0" name="Variable">prueba</param>
+                    <param id="1" name="Value">EnemiesTorso.type</param>
+                </action>
+                <action id="-9" name="Set value" sid="353700054278009" type="System">
+                    <param id="0" name="Variable">vidaEnemigo</param>
+                    <param id="1" name="Value">enemiesTorso.life</param>
+                </action>
+                <action id="-9" name="Set value" sid="852072692308660" type="System">
+                    <param id="0" name="Variable">IDcollision</param>
+                    <param id="1" name="Value">enemiesTorso.ID</param>
+                </action>
+                <action id="0" name="Set text" sid="628213313622213" type="console">
+                    <param id="0" name="Text">&quot;life= &quot;&amp;EnemiesTorso.life&amp;&quot;global= &quot;&amp;vidaEnemigo</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="997264708725185">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="948988136514464" type="System">
+                            <param id="0" name="Variable">prueba</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;test2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="876495447075151">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="153320267402409" type="test2">
+                                    <param id="0" name="Object">Bullets</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="691287425874188" type="test2">
+                                    <param id="0" name="Instance variable">life</param>
+                                    <param id="1" name="Value">heroes.damage</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="253011403778203" type="test2">
+                                    <param id="0" name="Scale">2</param>
+                                </action>
+                                <action id="0" name="Set text" sid="306054456213229" type="vida">
+                                    <param id="0" name="Text">&quot;&quot;&amp;test2.life</param>
+                                </action>
+                                <action disabled="1" id="0" name="Set text" sid="900343548630852" type="console">
+                                    <param id="0" name="Text">&quot;vida=&quot;&amp;EnemiesTorso.life&amp;&quot;headshot&quot;&amp;Heroes.damage</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="663846538452877" type="test2">
+                                    <param id="0" name="X">test2.X-test2.knockBack</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="808162318404476" type="Bullets" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="725787775019598">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="635556329626578" type="test2">
+                                            <param id="0" name="Instance variable">life</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="940168062231527" type="console">
+                                            <param id="0" name="Text">&quot;destruido:  &quot;&amp;EnemiesTorso.type&amp;&quot;vida&quot;&amp;EnemiesTorso.life</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="739351778099973" type="test2" />
+                                        <action disabled="1" id="12" name="Vibrate" sid="901145461025372" type="Browser">
+                                            <param id="0" name="Pattern">&quot;200,100,200&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="548924378602501">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="786112469751986" type="test2Head">
+                                    <param id="0" name="Object">Bullets</param>
+                                </condition>
+                                <condition id="-33" name="Pick by comparison" sid="950943116392212" type="System">
+                                    <param id="0" name="Object">test2</param>
+                                    <param id="1" name="Expression">test2.IID</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">test2Head.IID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="453276248600769" type="console">
+                                    <param id="0" name="Text">&quot;Type=&quot;&amp;EnemiesTorso.type</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="157063560037652" type="test2">
+                                    <param id="0" name="Instance variable">life</param>
+                                    <param id="1" name="Value">heroes.headShootDamage</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="543037201403115" type="test2">
+                                    <param id="0" name="Scale">0.5</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="317447029841678" type="test2">
+                                    <param id="0" name="X">test2.X-test2.knockBack</param>
+                                </action>
+                                <action disabled="1" id="0" name="Set text" sid="493186080030700" type="console">
+                                    <param id="0" name="Text">console.Text&amp;&quot;vida=&quot;&amp;EnemiesTorso.life&amp;&quot;headshot&quot;&amp;Heroes.headShootDamage</param>
+                                </action>
+                                <action id="0" name="Set text" sid="486989531103530" type="vida">
+                                    <param id="0" name="Text">&quot;&quot;&amp;test2.life</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="247394140510360" type="Bullets" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="839849195706971">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="996023570713322" type="test2">
+                                            <param id="0" name="Instance variable">life</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="575563278812090" type="console">
+                                            <param id="0" name="Text">&quot;destruido:  &quot;&amp;EnemiesTorso.type&amp;&quot;vida&quot;&amp;EnemiesTorso.life</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="274100388037490" type="test2" />
+                                        <action disabled="1" id="12" name="Vibrate" sid="770677357717871" type="Browser">
+                                            <param id="0" name="Pattern">&quot;200,100,200&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="770599973627309">
+            <conditions>
+                <condition id="2" name="Key is down" sid="201665416439397" type="Keyboard">
+                    <param id="0" name="Key">82 (R)</param>
+                </condition>
+                <condition id="4" name="Is touching object" sid="557271161531328" type="Touch">
+                    <param id="0" name="Object">revolverPrueba</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="592306789097560">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="326529045743168" type="revolverPrueba">
+                            <param id="0" name="Instance variable">ready</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="515000792979311" type="bulletIcon" />
+                        <action id="-10" name="Set value" sid="448698199157927" type="revolverPrueba">
+                            <param id="0" name="Instance variable">carga</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="158072137815474" type="Function">
+                            <param id="0" name="Name">&quot;reload&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="522040768317978">
+            <conditions>
+                <condition id="0" name="On function" sid="908014329314409" type="Function">
+                    <param id="0" name="Name">&quot;reload&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="413758338881143" type="revolverPrueba">
+                    <param id="0" name="Instance variable">ready</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="763707027261161">
+                    <conditions>
+                        <condition id="-10" name="For" sid="680794118494666" type="System">
+                            <param id="0" name="Name">&quot;recargaLoop&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">heroes.bullets</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="426834233530049" type="revolverPrueba">
+                            <param id="0" name="Instance variable">carga</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="712272609036905" type="revolverPrueba">
+                            <param id="0" name="Object">bulletIcon</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">revolverPrueba.carga</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="264067060839940" type="bulletIcon">
+                            <param id="0" name="Pin to">revolverPrueba</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action disabled="1" id="0" name="Set text" sid="824781838315160" type="console">
+                            <param id="0" name="Text">console.Text&amp;&quot;  &quot;&amp;loopindex(&quot;recargaLoop&quot;)</param>
+                        </action>
+                        <action id="-18" name="Rotate clockwise" sid="279085785361141" type="bulletIcon">
+                            <param id="0" name="Degrees">50</param>
+                        </action>
+                        <action behavior="Rotate" id="1" name="Set acceleration" sid="352755524581237" type="revolverPrueba">
+                            <param id="0" name="Acceleration">0</param>
+                        </action>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="315149807521761" type="revolverPrueba">
+                            <param id="0" name="Speed">400</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="589372960969166">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="832581257457105" type="revolverPrueba">
+                            <param id="0" name="Instance variable">carga</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">heroes.bullets</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="924945483357044" type="System">
+                            <param id="0" name="Seconds">0.6</param>
+                        </action>
+                        <action behavior="Rotate" id="1" name="Set acceleration" sid="964591108786238" type="revolverPrueba">
+                            <param id="0" name="Acceleration">0</param>
+                        </action>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="263963727443695" type="revolverPrueba">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="355790366747697">
+            <conditions>
+                <condition id="0" name="On clicked" sid="390820116848874" type="reload" />
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="936679054294830" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="203069865199486">
+            <conditions>
+                <condition id="0" name="On clicked" sid="344958585119037" type="fullScreen" />
+            </conditions>
+            <actions>
+                <action id="10" name="Request fullscreen" sid="555719203325722" type="Browser">
+                    <param id="0" name="Mode">5</param>
+                </action>
+                <action id="-9" name="Set value" sid="271201801975652" type="System">
+                    <param id="0" name="Variable">fullScreen</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="18" name="Lock orientation" sid="220922723220917" type="Browser">
+                    <param id="0" name="Orientation">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="726033267838539">
+            <conditions>
+                <condition id="-32" name="Is on platform" sid="712922525061745" type="System">
+                    <param id="0" name="Platform">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="455772493768378">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="664838934927113" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="827825732313920" type="demonHunter">
+                            <param id="0" name="X">Mouse.X</param>
+                            <param id="1" name="Y">Mouse.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block disabled="1" sid="674884617066248">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="713522207185377" type="EnemiesTorso">
+                    <param id="0" name="Object">barrera</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="785830080653482" type="EnemiesTorso" />
+                <action id="-12" name="Subtract from" sid="746189061968934" type="barrera">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Value">EnemiesTorso.damage</param>
+                </action>
+                <action id="0" name="Set text" sid="185095720837305" type="health">
+                    <param id="0" name="Text">&quot;&quot;&amp;barrera.health</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
