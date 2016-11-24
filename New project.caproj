@@ -18,6 +18,7 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
@@ -77,8 +78,8 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="845326887747027" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0.5">
-                        <image-point name="shoot" x="1" y="0.466667" />
+                    <frame duration="1" hotspotX="0.0121951" hotspotY="0.5">
+                        <image-point name="shoot" x="0.987805" y="0.464286" />
                     </frame>
                 </animation>
             </animation-folder>
@@ -176,10 +177,18 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="666308689837888" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.535">
-                        <image-point name="Imagepoint 1" x="0.52" y="0.3325" />
-                        <image-point name="Imagepoint 2" x="0.56" y="0.6" />
-                        <image-point name="Imagepoint 3" x="0.5" y="0.815" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.533742" original-source="E:\github\cursed-kingdomDesing\spawnerTest.png">
+                        <image-point name="Imagepoint 1" x="0.203704" y="0.199387" />
+                        <image-point name="Imagepoint 2" x="0.378917" y="0.441718" />
+                        <image-point name="Imagepoint 3" x="0.60114" y="0.895706" />
+                        <collision-poly>
+                            <point x="0.5" y="0.168712" />
+                            <point x="0.737892" y="0.564417" />
+                            <point x="0.700855" y="0.5" />
+                            <point x="0.5" y="0.834356" />
+                            <point x="0.262108" y="0.435583" />
+                            <point x="0.30057" y="0.5" />
+                        </collision-poly>
                     </frame>
                 </animation>
             </animation-folder>
@@ -228,7 +237,16 @@
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="515986185807671" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501193" original-source="E:\github\cursed-kingdomDesing\wallTest.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.5" y="0.264916" />
+                            <point x="0.728571" y="0.498807" />
+                            <point x="1" y="1" />
+                            <point x="0.5" y="0.73747" />
+                            <point x="0.271429" y="0.498807" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -364,6 +382,35 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="363919740528211" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="backgroundTest" sid="564734850549570">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="294240991712331" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501044" original-source="E:\github\cursed-kingdomDesing\backgroundTest.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="587729933821216">
+            <plugin id="TiledBg" />
+            <texture original-source="E:\github\cursed-kingdomDesing\backgroundTest.png" />
+        </object-type>
+        <object-type name="wallTest" sid="963950674368629">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="507438853761458" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501193" original-source="E:\github\cursed-kingdomDesing\wallTest.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.5" y="0.264916" />
+                            <point x="0.728571" y="0.498807" />
+                            <point x="1" y="1" />
+                            <point x="0.5" y="0.73747" />
+                            <point x="0.271429" y="0.498807" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>

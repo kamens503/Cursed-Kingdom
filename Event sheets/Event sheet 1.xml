@@ -60,7 +60,7 @@
             <actions>
                 <action id="-3" name="Create object" sid="996050152379137" type="System">
                     <param id="0" name="Object to create">demonHunter</param>
-                    <param id="1" name="Layer">0</param>
+                    <param id="1" name="Layer">3</param>
                     <param id="2" name="X">35</param>
                     <param id="3" name="Y">190</param>
                 </action>
@@ -216,7 +216,7 @@
                 <event-block sid="628392753424055">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="857534512681676" type="System">
-                            <param id="0" name="Interval (seconds)">4</param>
+                            <param id="0" name="Interval (seconds)">6</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -245,7 +245,7 @@
                             <actions>
                                 <action id="0" name="Spawn another object" sid="778826477216833" type="Sprite">
                                     <param id="0" name="Object">test</param>
-                                    <param id="1" name="Layer">0</param>
+                                    <param id="1" name="Layer">4</param>
                                     <param id="2" name="Image point">round(random(1,3))</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="551488628613901" type="test">
@@ -316,7 +316,7 @@
                             <actions>
                                 <action id="0" name="Spawn another object" sid="333162438211915" type="Sprite">
                                     <param id="0" name="Object">test2</param>
-                                    <param id="1" name="Layer">0</param>
+                                    <param id="1" name="Layer">4</param>
                                     <param id="2" name="Image point">round(random(1,3))</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="593520185905185" type="test2">
@@ -461,19 +461,19 @@
                                     <param id="0" name="Instance variable">ready</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
+                                <action id="-22" name="Set angle toward position" sid="251263851107471" type="demonHunter">
+                                    <param id="0" name="X">Function.Param(0)</param>
+                                    <param id="1" name="Y">Function.Param(1)</param>
+                                </action>
                                 <action id="0" name="Spawn another object" sid="691360999855966" type="demonHunter">
                                     <param id="0" name="Object">bullet</param>
-                                    <param id="1" name="Layer">0</param>
+                                    <param id="1" name="Layer">4</param>
                                     <param id="2" name="Image point">1</param>
                                 </action>
                                 <action id="-18" name="Rotate clockwise" sid="722502193252681" type="bullet">
                                     <param id="0" name="Degrees">Function.Param(4)</param>
                                 </action>
                                 <action id="-22" name="Set angle toward position" sid="699068228344409" type="bullet">
-                                    <param id="0" name="X">Function.Param(0)</param>
-                                    <param id="1" name="Y">Function.Param(1)</param>
-                                </action>
-                                <action id="-22" name="Set angle toward position" sid="251263851107471" type="demonHunter">
                                     <param id="0" name="X">Function.Param(0)</param>
                                     <param id="1" name="Y">Function.Param(1)</param>
                                 </action>
@@ -544,7 +544,7 @@
                                     <param id="0" name="Instance variable">life</param>
                                     <param id="1" name="Value">heroes.damage</param>
                                 </action>
-                                <action id="9" name="Set scale" sid="253011403778203" type="test2">
+                                <action disabled="1" id="9" name="Set scale" sid="253011403778203" type="test2">
                                     <param id="0" name="Scale">2</param>
                                 </action>
                                 <action id="0" name="Set text" sid="306054456213229" type="vida">
@@ -554,7 +554,7 @@
                                     <param id="0" name="Text">&quot;vida=&quot;&amp;EnemiesTorso.life&amp;&quot;headshot&quot;&amp;Heroes.damage</param>
                                 </action>
                                 <action id="-1" name="Set X" sid="663846538452877" type="test2">
-                                    <param id="0" name="X">test2.X-test2.knockBack</param>
+                                    <param id="0" name="X">test2.X+test2.knockBack</param>
                                 </action>
                                 <action id="-9" name="Destroy" sid="808162318404476" type="Bullets" />
                             </actions>
@@ -599,11 +599,11 @@
                                     <param id="0" name="Instance variable">life</param>
                                     <param id="1" name="Value">heroes.headShootDamage</param>
                                 </action>
-                                <action id="9" name="Set scale" sid="543037201403115" type="test2">
+                                <action disabled="1" id="9" name="Set scale" sid="543037201403115" type="test2">
                                     <param id="0" name="Scale">0.5</param>
                                 </action>
                                 <action id="-1" name="Set X" sid="317447029841678" type="test2">
-                                    <param id="0" name="X">test2.X-test2.knockBack</param>
+                                    <param id="0" name="X">test2.X+test2.knockBack</param>
                                 </action>
                                 <action disabled="1" id="0" name="Set text" sid="493186080030700" type="console">
                                     <param id="0" name="Text">console.Text&amp;&quot;vida=&quot;&amp;EnemiesTorso.life&amp;&quot;headshot&quot;&amp;Heroes.headShootDamage</param>
@@ -697,7 +697,7 @@
                         </action>
                         <action id="0" name="Spawn another object" sid="712272609036905" type="revolverPrueba">
                             <param id="0" name="Object">bulletIcon</param>
-                            <param id="1" name="Layer">2</param>
+                            <param id="1" name="Layer">5</param>
                             <param id="2" name="Image point">revolverPrueba.carga</param>
                         </action>
                         <action behavior="Pin" id="0" name="Pin to object" sid="264067060839940" type="bulletIcon">
