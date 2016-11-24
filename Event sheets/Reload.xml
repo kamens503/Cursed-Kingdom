@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Reload</name>
+    <events>
+        <event-block sid="797934933886382">
+            <conditions>
+                <condition id="0" name="On function" sid="209325046164569" type="Function">
+                    <param id="0" name="Name">&quot;reload&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="650893300956681" type="hudRevolverMagTest">
+                    <param id="0" name="Instance variable">ready</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="505824836459537">
+                    <conditions>
+                        <condition id="-10" name="For" sid="406974421810548" type="System">
+                            <param id="0" name="Name">&quot;recargaLoop&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">heroes.bullets</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="191910195027664" type="hudRevolverMagTest">
+                            <param id="0" name="Instance variable">carga</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="511264078624186" type="hudRevolverMagTest">
+                            <param id="0" name="Object">hudRevolverBullet</param>
+                            <param id="1" name="Layer">5</param>
+                            <param id="2" name="Image point">hudRevolverMagTest.carga</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="367577624511987" type="hudRevolverBullet">
+                            <param id="0" name="Pin to">hudRevolverMagTest</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action disabled="1" id="0" name="Set text" sid="520697273945740" type="hudConsoleTest">
+                            <param id="0" name="Text">hudConsoleTest.Text&amp;&quot;  &quot;&amp;loopindex(&quot;recargaLoop&quot;)</param>
+                        </action>
+                        <action id="-18" name="Rotate clockwise" sid="893044981903374" type="hudRevolverBullet">
+                            <param id="0" name="Degrees">50</param>
+                        </action>
+                        <action behavior="Rotate" id="1" name="Set acceleration" sid="507605363972204" type="hudRevolverMagTest">
+                            <param id="0" name="Acceleration">0</param>
+                        </action>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="840863030248011" type="hudRevolverMagTest">
+                            <param id="0" name="Speed">400</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="875384100866687">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="309753493042124" type="hudRevolverMagTest">
+                            <param id="0" name="Instance variable">carga</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">heroes.bullets</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="738809039514989" type="System">
+                            <param id="0" name="Seconds">0.6</param>
+                        </action>
+                        <action behavior="Rotate" id="1" name="Set acceleration" sid="357075086937450" type="hudRevolverMagTest">
+                            <param id="0" name="Acceleration">0</param>
+                        </action>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="593482080938866" type="hudRevolverMagTest">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -10,8 +10,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">Layout 1</layout>
-        <event-sheet active="1" order="1">Event sheet 1</event-sheet>
+        <layout order="0">Test Layout</layout>
+        <event-sheet active="1" order="1">@Test Layout</event-sheet>
+        <event-sheet order="2">Spawner</event-sheet>
+        <event-sheet order="3">Collision</event-sheet>
+        <event-sheet order="4">Reload</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -20,33 +23,40 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="1" name="Configuration Settings" />
     </properties>
     <families-expanded root="1">
-        <family expanded="1" name="EnemiesTorso" />
-        <family expanded="1" name="Heroes" />
-        <family expanded="1" name="Bullets" />
-        <family expanded="1" name="buttons" />
-        <family expanded="1" name="BulletsIcon" />
-        <family expanded="1" name="EnemiesHead" />
-        <family expanded="1" name="Enemies" />
+        <family expanded="0" name="EnemiesTorso" />
+        <family expanded="0" name="Heroes" />
+        <family expanded="0" name="Bullets" />
+        <family expanded="0" name="buttons" />
+        <family expanded="0" name="BulletsIcon" />
+        <family expanded="0" name="EnemiesHead" />
+        <family expanded="0" name="Enemies" />
+        <family expanded="0" name="MASTER" />
+        <family expanded="0" name="Family1" />
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/ENEMIES/" />
+        <folder expanded="1" path="object-folder/BG/" />
+        <folder expanded="1" path="object-folder/FX/" />
+        <folder expanded="0" path="object-folder/PLAYER/" />
+        <folder expanded="0" path="object-folder/HUD/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
-        <folder expanded="1" path="file-folder/" />
+        <folder expanded="0" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
-        <folder expanded="0" path="file-folder/Icons/" />
-        <folder expanded="1" path="animation-folder/test/" />
-        <folder expanded="1" path="animation-folder/demonHunter/" />
-        <folder expanded="1" path="animation-folder/bullet/" />
-        <folder expanded="1" path="animation-folder/bulletIcon/" />
+        <folder expanded="1" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/objBGreen/" />
+        <folder expanded="1" path="animation-folder/objHGreen/" />
+        <folder expanded="1" path="animation-folder/objBBlue/" />
+        <folder expanded="1" path="animation-folder/objHBlue/" />
+        <folder expanded="1" path="animation-folder/bgBarrier/" />
+        <folder expanded="1" path="animation-folder/bgSpawner/" />
+        <folder expanded="1" path="animation-folder/objBullet/" />
+        <folder expanded="1" path="animation-folder/objPlayerTest/" />
+        <folder expanded="1" path="animation-folder/hudRevolverBullet/" />
+        <folder expanded="1" path="animation-folder/hudRevolverMagTest/" />
         <folder expanded="1" path="animation-folder/magazine/" />
-        <folder expanded="1" path="animation-folder/Sprite/" />
-        <folder expanded="1" path="animation-folder/revolverPrueba/" />
-        <folder expanded="1" path="animation-folder/barrera/" />
-        <folder expanded="1" path="animation-folder/testHead/" />
-        <folder expanded="1" path="animation-folder/test2Head/" />
-        <folder expanded="1" path="animation-folder/test2/" />
         <folder expanded="1" path="animation-folder/default/" />
         <folder expanded="1" path="animation-folder/default2/" />
         <folder expanded="1" path="animation-folder/default3/" />

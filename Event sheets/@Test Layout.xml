@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>@Test Layout</name>
+    <events>
+        <include>Collision</include>
+        <include>Spawner</include>
+        <variable constant="0" name="vidaEnemigo" sid="375367117683618" static="0" type="number">0</variable>
+        <variable constant="0" name="prueba" sid="488836194251799" static="0" type="text"></variable>
+        <variable constant="0" name="enemyID" sid="879841552858004" static="0" type="number">0</variable>
+        <variable constant="0" name="IDcollision" sid="295066101715402" static="0" type="number">0</variable>
+        <variable constant="0" name="fullScreen" sid="994878897858839" static="0" type="number">0</variable>
+        <event-block sid="265384311469182">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="291819714542697" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="998390468926795" type="hudFPS">
+                    <param id="0" name="Text">&quot;FPS: &quot;&amp;fps</param>
+                </action>
+                <action id="-1" name="Set X" sid="513894076578646" type="EnemiesTorso">
+                    <param id="0" name="X">EnemiesTorso.X-EnemiesTorso.speed</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="925711826229865" title="Mouse Angle">
+            <sub-events>
+                <event-block sid="455772493768378">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="664838934927113" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="827825732313920" type="objPlayerTest">
+                            <param id="0" name="X">Mouse.X</param>
+                            <param id="1" name="Y">Mouse.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="531379874032671" title="ON START">
+            <sub-events>
+                <event-block sid="399337464216904">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="775430065759005" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="595313105083763" type="EnemiesTorso" />
+                        <action id="-9" name="Destroy" sid="687269007309605" type="Heroes" />
+                        <action id="0" name="Set text" sid="856336143715924" type="hudTestHealth">
+                            <param id="0" name="Text">&quot;&quot;&amp;bgBarrier.health</param>
+                        </action>
+                        <action id="0" name="Call function" sid="747967652173241" type="Function">
+                            <param id="0" name="Name">&quot;spawnHeroe&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;demonHunter&quot;{###}&quot;revolver&quot;</param>
+                        </action>
+                        <action behavior="Rotate" id="1" name="Set acceleration" sid="614815369263204" type="hudRevolverMagTest">
+                            <param id="0" name="Acceleration">0</param>
+                        </action>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="202443060819629" type="hudRevolverMagTest">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="639009173133014" type="Function">
+                            <param id="0" name="Name">&quot;reload&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="368182810400052">
+                            <conditions>
+                                <condition id="-20" name="Is on mobile device" sid="992880350926568" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" sid="836285907218063" type="System">
+                                    <param id="0" name="Group name">&quot;Mouse Angle&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="161521118322223" title="ENEMIES">
+            <sub-events>
+                <event-block disabled="1" sid="378946495951444">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="989824769133832" type="System">
+                            <param id="0" name="Interval (seconds)">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="670888019649172" type="Function">
+                            <param id="0" name="Name">&quot;spawnEnemies&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;test&quot;{###}enemyID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="628392753424055">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="857534512681676" type="System">
+                            <param id="0" name="Interval (seconds)">6</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="269090477737445" type="Function">
+                            <param id="0" name="Name">&quot;spawnEnemies&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;test2&quot;{###}enemyID</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="365955492249446" title="SHOOT">
+            <sub-events>
+                <event-block sid="542009848131570">
+                    <conditions>
+                        <condition id="14" name="On tap" sid="756688492319242" type="Touch" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="748065821433471" type="objPlayerTest">
+                            <param id="0" name="Instance variable">ready</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="229999138251735" type="hudRevolverMagTest">
+                            <param id="0" name="Instance variable">carga</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="4" inverted="1" name="Is touching object" sid="164512911359561" type="Touch">
+                            <param id="0" name="Object">hudRevolverMagTest</param>
+                        </condition>
+                        <condition id="4" inverted="1" name="Is touching object" sid="306474997645253" type="Touch">
+                            <param id="0" name="Object">buttons</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="407925762597840" type="Function">
+                            <param id="0" name="Name">&quot;shoot&quot;</param>
+                            <param id="1" name="Parameter {n}">Touch.X{###}Touch.Y{###}heroes.cooldown{###}heroes.type{###}heroes.bulletVelocidad</param>
+                        </action>
+                        <action disabled="1" id="0" name="Set text" sid="424871758593308" type="hudConsoleTest">
+                            <param id="0" name="Text">hudConsoleTest.Text&amp;&quot;Tocado&quot;&amp;Touch.X&amp;&quot; &quot;&amp;Touch.Y</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="313488566756905" type="hudRevolverMagTest">
+                            <param id="0" name="Instance variable">ready</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="757778247956483">
+                    <conditions>
+                        <condition id="0" name="On function" sid="493958527974369" type="Function">
+                            <param id="0" name="Name">&quot;shoot&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="395228706053010">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="384621493403540" type="Function">
+                                    <param id="0" name="Index">3</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;demonHunter&quot;</param>
+                                </condition>
+                                <condition id="-13" name="Pick nth instance" sid="911770958122027" type="System">
+                                    <param id="0" name="Object">hudRevolverBullet</param>
+                                    <param id="1" name="Instance">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Rotate" id="0" name="Set speed" sid="760309075531597" type="hudRevolverMagTest">
+                                    <param id="0" name="Speed">300</param>
+                                </action>
+                                <action behavior="Rotate" id="1" name="Set acceleration" sid="466976876751916" type="hudRevolverMagTest">
+                                    <param id="0" name="Acceleration">800</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="701260649195504" type="hudRevolverMagTest">
+                                    <param id="0" name="Instance variable">carga</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="337305529287771" type="hudRevolverBullet" />
+                                <action id="-13" name="Set boolean" sid="999770445213482" type="objPlayerTest">
+                                    <param id="0" name="Instance variable">ready</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="251263851107471" type="objPlayerTest">
+                                    <param id="0" name="X">Function.Param(0)</param>
+                                    <param id="1" name="Y">Function.Param(1)</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="691360999855966" type="objPlayerTest">
+                                    <param id="0" name="Object">objBullet</param>
+                                    <param id="1" name="Layer">4</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="-18" name="Rotate clockwise" sid="722502193252681" type="objBullet">
+                                    <param id="0" name="Degrees">Function.Param(4)</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="699068228344409" type="objBullet">
+                                    <param id="0" name="X">Function.Param(0)</param>
+                                    <param id="1" name="Y">Function.Param(1)</param>
+                                </action>
+                                <action disabled="1" id="0" name="Set text" sid="699828695036137" type="hudConsoleTest">
+                                    <param id="0" name="Text">hudConsoleTest.Text&amp;&quot;carga= &quot;&amp;hudRevolverMagTest.carga</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="445452641912346" type="System">
+                                    <param id="0" name="Seconds">Function.Param(2)</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="636229019119173" type="objPlayerTest">
+                                    <param id="0" name="Instance variable">ready</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Rotate" id="0" name="Set speed" sid="939973129378753" type="hudRevolverMagTest">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action behavior="Rotate" id="1" name="Set acceleration" sid="243424757701354" type="hudRevolverMagTest">
+                                    <param id="0" name="Acceleration">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="879548449707891" title="RELOAD">
+            <sub-events>
+                <event-block any="1" sid="770599973627309">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="201665416439397" type="Keyboard">
+                            <param id="0" name="Key">82 (R)</param>
+                        </condition>
+                        <condition id="4" name="Is touching object" sid="557271161531328" type="Touch">
+                            <param id="0" name="Object">hudRevolverMagTest</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="592306789097560">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="326529045743168" type="hudRevolverMagTest">
+                                    <param id="0" name="Instance variable">ready</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="515000792979311" type="BulletsIcon" />
+                                <action id="-10" name="Set value" sid="448698199157927" type="hudRevolverMagTest">
+                                    <param id="0" name="Instance variable">carga</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="158072137815474" type="Function">
+                                    <param id="0" name="Name">&quot;reload&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="357227372255049" title="DEBUG">
+            <sub-events>
+                <event-block sid="355790366747697">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="390820116848874" type="btnReload" />
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="936679054294830" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="203069865199486">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="344958585119037" type="btnFullScreen" />
+                    </conditions>
+                    <actions>
+                        <action id="10" name="Request fullscreen" sid="555719203325722" type="Browser">
+                            <param id="0" name="Mode">5</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="271201801975652" type="System">
+                            <param id="0" name="Variable">fullScreen</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="18" name="Lock orientation" sid="220922723220917" type="Browser">
+                            <param id="0" name="Orientation">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

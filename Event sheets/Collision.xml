@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Collision</name>
+    <events>
+        <event-block sid="703659938833667">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="728473621310983" type="Bullets">
+                    <param id="0" name="Object">Enemies</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="214508716824555" type="System">
+                    <param id="0" name="Variable">prueba</param>
+                    <param id="1" name="Value">EnemiesTorso.type</param>
+                </action>
+                <action id="-9" name="Set value" sid="860619391618073" type="System">
+                    <param id="0" name="Variable">vidaEnemigo</param>
+                    <param id="1" name="Value">enemiesTorso.life</param>
+                </action>
+                <action id="-9" name="Set value" sid="891132455518490" type="System">
+                    <param id="0" name="Variable">IDcollision</param>
+                    <param id="1" name="Value">enemiesTorso.ID</param>
+                </action>
+                <action id="0" name="Set text" sid="304110744641226" type="hudConsoleTest">
+                    <param id="0" name="Text">&quot;life= &quot;&amp;EnemiesTorso.life&amp;&quot;global= &quot;&amp;vidaEnemigo</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="369796055458524">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="212599160941661" type="System">
+                            <param id="0" name="Variable">prueba</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;test2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="484546055308430">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="535023969228098" type="objBGreen">
+                                    <param id="0" name="Object">Bullets</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="916676046807630" type="objBGreen">
+                                    <param id="0" name="Instance variable">life</param>
+                                    <param id="1" name="Value">heroes.damage</param>
+                                </action>
+                                <action disabled="1" id="9" name="Set scale" sid="407707505619341" type="objBGreen">
+                                    <param id="0" name="Scale">2</param>
+                                </action>
+                                <action id="0" name="Set text" sid="882367174940481" type="hudEnemyHealth">
+                                    <param id="0" name="Text">&quot;&quot;&amp;objBGreen.life</param>
+                                </action>
+                                <action disabled="1" id="0" name="Set text" sid="771847765391933" type="hudConsoleTest">
+                                    <param id="0" name="Text">&quot;vida=&quot;&amp;EnemiesTorso.life&amp;&quot;headshot&quot;&amp;Heroes.damage</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="697180131885027" type="objBGreen">
+                                    <param id="0" name="X">objBGreen.X+objBGreen.knockBack</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="112368224944192" type="Bullets" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="975548987315287">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="835256402385871" type="objBGreen">
+                                            <param id="0" name="Instance variable">life</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="830124967894745" type="hudConsoleTest">
+                                            <param id="0" name="Text">&quot;destruido:  &quot;&amp;EnemiesTorso.type&amp;&quot;vida&quot;&amp;EnemiesTorso.life</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="391439820539898" type="objBGreen" />
+                                        <action disabled="1" id="12" name="Vibrate" sid="555478694248781" type="Browser">
+                                            <param id="0" name="Pattern">&quot;200,100,200&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="548719648461715">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="467022777641443" type="objHGreen">
+                                    <param id="0" name="Object">Bullets</param>
+                                </condition>
+                                <condition id="-33" name="Pick by comparison" sid="288714573992061" type="System">
+                                    <param id="0" name="Object">objBGreen</param>
+                                    <param id="1" name="Expression">objBGreen.IID</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">objHGreen.IID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="319926131942623" type="hudConsoleTest">
+                                    <param id="0" name="Text">&quot;Type=&quot;&amp;EnemiesTorso.type</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="445590972933840" type="objBGreen">
+                                    <param id="0" name="Instance variable">life</param>
+                                    <param id="1" name="Value">heroes.headShootDamage</param>
+                                </action>
+                                <action disabled="1" id="9" name="Set scale" sid="144102233984324" type="objBGreen">
+                                    <param id="0" name="Scale">0.5</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="801719924781921" type="objBGreen">
+                                    <param id="0" name="X">objBGreen.X+objBGreen.knockBack</param>
+                                </action>
+                                <action disabled="1" id="0" name="Set text" sid="350864034575726" type="hudConsoleTest">
+                                    <param id="0" name="Text">hudConsoleTest.Text&amp;&quot;vida=&quot;&amp;EnemiesTorso.life&amp;&quot;headshot&quot;&amp;Heroes.headShootDamage</param>
+                                </action>
+                                <action id="0" name="Set text" sid="412030215919227" type="hudEnemyHealth">
+                                    <param id="0" name="Text">&quot;&quot;&amp;objBGreen.life</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="767721011478539" type="Bullets" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="658268591379316">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="348908751242733" type="objBGreen">
+                                            <param id="0" name="Instance variable">life</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="201450149660667" type="hudConsoleTest">
+                                            <param id="0" name="Text">&quot;destruido:  &quot;&amp;EnemiesTorso.type&amp;&quot;vida&quot;&amp;EnemiesTorso.life</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="338546962233134" type="objBGreen" />
+                                        <action disabled="1" id="12" name="Vibrate" sid="949170326316871" type="Browser">
+                                            <param id="0" name="Pattern">&quot;200,100,200&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="757204072795643">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="398902886876893" type="EnemiesTorso">
+                    <param id="0" name="Object">bgBarrier</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="911383283154575" type="EnemiesTorso" />
+                <action id="-12" name="Subtract from" sid="269740724903593" type="bgBarrier">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Value">EnemiesTorso.damage</param>
+                </action>
+                <action id="0" name="Set text" sid="184403107293202" type="hudTestHealth">
+                    <param id="0" name="Text">&quot;&quot;&amp;bgBarrier.health</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
