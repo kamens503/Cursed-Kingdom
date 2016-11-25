@@ -16,10 +16,6 @@
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
-<<<<<<< HEAD
-=======
-        <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
->>>>>>> origin/master
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
@@ -56,7 +52,6 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-<<<<<<< HEAD
         <object-folder name="ENEMIES">
             <object-type name="objBGreen" sid="223215669642299">
                 <plugin id="Sprite" />
@@ -305,85 +300,12 @@
                 </container>
             </object-type>
         </object-folder>
-=======
-        <object-type name="test" sid="838319471495427">
-            <plugin id="Sprite" />
-            <container>
-                <type>test</type>
-                <type>testHead</type>
-            </container>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="204172573351198" speed="5">
-                    <frame duration="1" hotspotX="0.480769" hotspotY="0.945946">
-                        <image-point name="head" x="0.480769" y="-0.0810811" />
-                        <image-point name="body" x="0.5" y="0.945946" />
-                        <collision-poly>
-                            <point x="0.0192308" y="0" />
-                            <point x="0.980767" y="0" />
-                            <point x="0.942812" y="0.957497" />
-                            <point x="0.0192308" y="0.966281" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="demonHunter" sid="923290662174776">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="845326887747027" speed="5">
-                    <frame duration="1" hotspotX="0.0121951" hotspotY="0.5">
-                        <image-point name="shoot" x="0.987805" y="0.464286" />
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="bullet" sid="120919979752722">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="DestroyOutsideLayout" sid="775465966057275">
-                    <behavior id="destroy" />
-                </behavior-type>
-                <behavior-type name="Bullet" sid="682415447859564">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="669662227516907" speed="5">
-                    <frame duration="1" hotspotX="0.951219" hotspotY="0.421053" />
-                </animation>
-            </animation-folder>
-        </object-type>
->>>>>>> origin/master
         <object-type name="Keyboard" sid="291918459254414">
             <plugin id="Keyboard" />
         </object-type>
         <object-type name="Mouse" sid="728775317011533">
             <plugin id="Mouse" />
         </object-type>
-<<<<<<< HEAD
-=======
-        <object-type name="bulletIcon" sid="251286623463627">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="DestroyOutsideLayout" sid="891780445343822">
-                    <behavior id="destroy" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="925544482197261" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrador\Documents\spriterPrueba\bulletPrueba.png">
-                        <image-point name="Imagepoint 1" x="0.5" y="0.5" />
-                        <collision-poly>
-                            <point x="0.977778" y="0" />
-                            <point x="0.977778" y="0.977778" />
-                            <point x="0" y="0.977778" />
-                            <point x="0" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
->>>>>>> origin/master
         <object-type name="magazine" sid="571296542507930">
             <plugin id="Sprite" />
             <instance-variables>
@@ -402,7 +324,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-<<<<<<< HEAD
         <object-type name="Function" sid="648627933107201">
             <plugin id="Function" />
         </object-type>
@@ -412,188 +333,6 @@
         <object-type name="Browser" sid="657189749074882">
             <plugin id="Browser" />
         </object-type>
-=======
-        <object-type global="1" name="console" sid="189925385891862">
-            <plugin id="TextBox" />
-            <instance-variables>
-                <instance-variable name="ID" sid="201182809966201" type="number" />
-            </instance-variables>
-        </object-type>
-        <object-type name="SpriteFont" sid="951442290237336">
-            <plugin id="Spritefont2" />
-            <texture />
-        </object-type>
-        <object-type name="number" sid="844208489471389">
-            <plugin id="TextBox" />
-            <instance-variables>
-                <instance-variable name="ID" sid="317024458015606" type="number" />
-            </instance-variables>
-        </object-type>
-        <object-type name="Function" sid="648627933107201">
-            <plugin id="Function" />
-        </object-type>
-        <object-type name="TextBox" sid="165239343494573">
-            <plugin id="TextBox" />
-        </object-type>
-        <object-type name="Touch" sid="888968495323107">
-            <plugin id="Touch" />
-        </object-type>
-        <object-type name="fullScreen" sid="337705782728412">
-            <plugin id="Button" />
-        </object-type>
-        <object-type name="Sprite" sid="194228870636565">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="666308689837888" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.533742" original-source="E:\github\cursed-kingdomDesing\spawnerTest.png">
-                        <image-point name="Imagepoint 1" x="0.203704" y="0.199387" />
-                        <image-point name="Imagepoint 2" x="0.378917" y="0.441718" />
-                        <image-point name="Imagepoint 3" x="0.60114" y="0.895706" />
-                        <collision-poly>
-                            <point x="0.5" y="0.168712" />
-                            <point x="0.737892" y="0.564417" />
-                            <point x="0.700855" y="0.5" />
-                            <point x="0.5" y="0.834356" />
-                            <point x="0.262108" y="0.435583" />
-                            <point x="0.30057" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Browser" sid="657189749074882">
-            <plugin id="Browser" />
-        </object-type>
-        <object-type name="revolverPrueba" sid="311068759498911">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="carga" sid="419586355051187" type="number" />
-                <instance-variable name="ready" sid="503918631845094" type="boolean" />
-            </instance-variables>
-            <behaviors>
-                <behavior-type name="Rotate" sid="548135454654383">
-                    <behavior id="Rotate" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="184911275235872" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.502041" original-source="C:\Users\Administrador\Documents\spriterPrueba\revolverPrueba.png">
-                        <image-point name="Imagepoint 1" x="0.336" y="0.236735" />
-                        <image-point name="Imagepoint 2" x="0.644" y="0.22449" />
-                        <image-point name="Imagepoint 3" x="0.812" y="0.485714" />
-                        <image-point name="Imagepoint 4" x="0.668" y="0.77551" />
-                        <image-point name="Imagepoint 5" x="0.356" y="0.783673" />
-                        <image-point name="Imagepoint 6" x="0.188" y="0.510204" />
-                        <collision-poly>
-                            <point x="0.144" y="0.146939" />
-                            <point x="0.5" y="0.0734694" />
-                            <point x="0.856" y="0.146939" />
-                            <point x="0.996" y="0.497959" />
-                            <point x="0.856" y="0.853061" />
-                            <point x="0.5" y="0.922449" />
-                            <point x="0.144" y="0.853061" />
-                            <point x="0.004" y="0.497959" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="barrera" sid="733756264128113">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="health" sid="649767085592136" type="number" />
-            </instance-variables>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="515986185807671" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.501193" original-source="E:\github\cursed-kingdomDesing\wallTest.png">
-                        <collision-poly>
-                            <point x="0" y="0" />
-                            <point x="0.5" y="0.264916" />
-                            <point x="0.728571" y="0.498807" />
-                            <point x="1" y="1" />
-                            <point x="0.5" y="0.73747" />
-                            <point x="0.271429" y="0.498807" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="reload" sid="584165450538423">
-            <plugin id="Button" />
-        </object-type>
-        <object-type global="1" name="health" sid="388197065297010">
-            <plugin id="TextBox" />
-            <instance-variables>
-                <instance-variable name="ID" sid="671328076939758" type="number" />
-            </instance-variables>
-        </object-type>
-        <object-type name="testHead" sid="286353526554492">
-            <plugin id="Sprite" />
-            <container>
-                <type>test</type>
-                <type>testHead</type>
-            </container>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="317949829119209" speed="5">
-                    <frame duration="1" hotspotX="0.480769" hotspotY="0.94">
-                        <image-point name="head" x="0.480769" y="-0.08" />
-                        <image-point name="body" x="0.5" y="0.94" />
-                        <collision-poly>
-                            <point x="0.0192308" y="0" />
-                            <point x="0.980767" y="0" />
-                            <point x="0.942812" y="0.957497" />
-                            <point x="0.0192308" y="0.966281" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="test2Head" sid="786463301271588">
-            <plugin id="Sprite" />
-            <container>
-                <type>test2</type>
-                <type>test2Head</type>
-                <type>vida</type>
-            </container>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="652267000864813" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="test2" sid="223215669642299">
-            <plugin id="Sprite" />
-            <container>
-                <type>test2</type>
-                <type>test2Head</type>
-                <type>vida</type>
-            </container>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="825261099827868" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1">
-                        <image-point name="Imagepoint 1" x="0.49" y="-0.35" />
-                        <image-point name="Imagepoint 2" x="0.49" y="-2.875" />
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="vida" sid="130069918601755">
-            <plugin id="TextBox" />
-            <instance-variables>
-                <instance-variable name="ID" sid="233675079844935" type="number" />
-            </instance-variables>
-            <behaviors>
-                <behavior-type name="Pin" sid="143536177072174">
-                    <behavior id="Pin" />
-                </behavior-type>
-            </behaviors>
-            <container>
-                <type>test2</type>
-                <type>test2Head</type>
-                <type>vida</type>
-            </container>
-        </object-type>
->>>>>>> origin/master
         <object-type name="default" sid="213178373547403">
             <plugin id="Sprite" />
             <instance-variables>
@@ -654,49 +393,12 @@
                 </animation>
             </animation-folder>
         </object-type>
-<<<<<<< HEAD
-=======
-        <object-type name="backgroundTest" sid="564734850549570">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="294240991712331" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.501044" original-source="E:\github\cursed-kingdomDesing\backgroundTest.png" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="TiledBackground" sid="587729933821216">
-            <plugin id="TiledBg" />
-            <texture original-source="E:\github\cursed-kingdomDesing\backgroundTest.png" />
-        </object-type>
-        <object-type name="wallTest" sid="963950674368629">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="507438853761458" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.501193" original-source="E:\github\cursed-kingdomDesing\wallTest.png">
-                        <collision-poly>
-                            <point x="0" y="0" />
-                            <point x="0.5" y="0.264916" />
-                            <point x="0.728571" y="0.498807" />
-                            <point x="1" y="1" />
-                            <point x="0.5" y="0.73747" />
-                            <point x="0.271429" y="0.498807" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
->>>>>>> origin/master
     </object-folder>
     <families>
         <family name="EnemiesTorso" plugin-id="Sprite" sid="672450680254494">
             <members>
-<<<<<<< HEAD
                 <member>objBBlue</member>
                 <member>objBGreen</member>
-=======
-                <member>test</member>
-                <member>test2</member>
->>>>>>> origin/master
             </members>
             <instance-variables>
                 <instance-variable name="torsoID" sid="449240990222424" type="number" />
@@ -715,11 +417,7 @@
         </family>
         <family name="Heroes" plugin-id="Sprite" sid="852779275199535">
             <members>
-<<<<<<< HEAD
                 <member>objPlayerTest</member>
-=======
-                <member>demonHunter</member>
->>>>>>> origin/master
             </members>
             <instance-variables>
                 <instance-variable name="bullets" sid="968657750395913" type="number" />
@@ -741,11 +439,7 @@
         </family>
         <family name="Bullets" plugin-id="Sprite" sid="351160602637554">
             <members>
-<<<<<<< HEAD
                 <member>objBullet</member>
-=======
-                <member>bullet</member>
->>>>>>> origin/master
             </members>
             <behaviors>
                 <behavior-type name="DestroyOutsideLayout2" sid="367640097837409">
@@ -758,22 +452,13 @@
         </family>
         <family name="buttons" plugin-id="Button" sid="455400711244743">
             <members>
-<<<<<<< HEAD
                 <member>btnFullScreen</member>
                 <member>btnReload</member>
-=======
-                <member>fullScreen</member>
-                <member>reload</member>
->>>>>>> origin/master
             </members>
         </family>
         <family name="BulletsIcon" plugin-id="Sprite" sid="380738424362145">
             <members>
-<<<<<<< HEAD
                 <member>hudRevolverBullet</member>
-=======
-                <member>bulletIcon</member>
->>>>>>> origin/master
             </members>
             <instance-variables>
                 <instance-variable name="prueba" sid="497061527166310" type="number" />
@@ -786,13 +471,8 @@
         </family>
         <family name="EnemiesHead" plugin-id="Sprite" sid="238655072297003">
             <members>
-<<<<<<< HEAD
                 <member>objHBlue</member>
                 <member>objHGreen</member>
-=======
-                <member>test2Head</member>
-                <member>testHead</member>
->>>>>>> origin/master
             </members>
             <instance-variables>
                 <instance-variable name="headID" sid="151189788525792" type="number" />
@@ -809,23 +489,15 @@
         </family>
         <family name="Enemies" plugin-id="Sprite" sid="413463830725412">
             <members>
-<<<<<<< HEAD
                 <member>objBBlue</member>
                 <member>objBGreen</member>
                 <member>objHBlue</member>
                 <member>objHGreen</member>
-=======
-                <member>test</member>
-                <member>test2</member>
-                <member>test2Head</member>
-                <member>testHead</member>
->>>>>>> origin/master
             </members>
             <instance-variables>
                 <instance-variable name="pruebaID" sid="468472492825889" type="number" />
             </instance-variables>
         </family>
-<<<<<<< HEAD
         <family name="MASTER" plugin-id="Sprite" sid="471108349703598">
             <members>
                 <member>bgBarrier</member>
@@ -858,14 +530,6 @@
         <event-sheet>Spawner.xml</event-sheet>
         <event-sheet>Collision.xml</event-sheet>
         <event-sheet>Reload.xml</event-sheet>
-=======
-    </families>
-    <layout-folder>
-        <layout>Layout 1.xml</layout>
-    </layout-folder>
-    <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
->>>>>>> origin/master
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="3" />

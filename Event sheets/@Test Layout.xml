@@ -76,6 +76,12 @@
                                     <param id="1" name="State">0</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="574057882438947">
+                                    <conditions />
+                                    <actions />
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
